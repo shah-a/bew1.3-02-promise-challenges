@@ -32,6 +32,7 @@
  *******************************************************************************
  */
 
+
 /* This function takes a callback as a parameter. */
 function snooze(action) {
   setTimeout(function () {

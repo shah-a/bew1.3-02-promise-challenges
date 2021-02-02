@@ -26,8 +26,8 @@
  *******************************************************************************
  */
 
-const request = require('request');
 
+const request = require('request');
 
 /**
  * Makes an API request and returns a Promise containing the result.
@@ -52,9 +52,9 @@ function makePromise(url) {
   });
 }
 
-const person1Promise = makePromise('https://swapi.co/api/people/1')
-const person2Promise = makePromise('https://swapi.co/api/people/2')
-const person3Promise = makePromise('https://swapi.co/api/people/3')
+const person1Promise = makePromise('https://swapi.dev/api/people/1')
+const person2Promise = makePromise('https://swapi.dev/api/people/2')
+const person3Promise = makePromise('https://swapi.dev/api/people/3')
 
 /* Uncomment me! #1 */
 // person1Promise.then(function (personResult) {
