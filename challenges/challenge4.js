@@ -34,22 +34,22 @@ const request = require('request');
  * @param url The url to make an API request to.
  */
 function makePromise(url) {
-    return new Promise(function(resolve, reject){
-        request(url, function (err, response, body) {
-            if (err) {
-                // Deal with any errors from the API call
-                return reject(err);
-            } else {
-                try {
-                    // If this works, then - success!! Return the parsed body.
-                    resolve(JSON.parse(body))
-                } catch (err) {
-                    // Deal with any errors from parsing the response
-                    return reject(err);
-                }
-            }
-        });
+  return new Promise(function (resolve, reject) {
+    request(url, function (err, response, body) {
+      if (err) {
+        // Deal with any errors from the API call
+        return reject(err);
+      } else {
+        try {
+          // If this works, then - success!! Return the parsed body.
+          resolve(JSON.parse(body))
+        } catch (err) {
+          // Deal with any errors from parsing the response
+          return reject(err);
+        }
+      }
     });
+  });
 }
 
 const person1Promise = makePromise('https://swapi.co/api/people/1')
@@ -57,21 +57,21 @@ const person2Promise = makePromise('https://swapi.co/api/people/2')
 const person3Promise = makePromise('https://swapi.co/api/people/3')
 
 /* Uncomment me! #1 */
-// person1Promise.then(function(personResult) {
-//     console.log(`Resulting person's name: ${personResult.name}`);
-// }).catch(function(err) {
-//     console.log("Got an error!")
-//     console.log(err);
+// person1Promise.then(function (personResult) {
+//   console.log(`Resulting person's name: ${personResult.name}`);
+// }).catch(function (err) {
+//   console.log("Got an error!")
+//   console.log(err);
 // });
 
 /* Uncomment me! #2 */
 // Promise.all([person1Promise, person2Promise, person3Promise])
-//     .then(function(results) {
-//         for (let i = 0; i < 3; i++) {
-//             console.log(`Person ${i+1}'s name: ${results[i].name}`)
-//         }
-//     })
-//     .catch(function(err) {
-//         console.log('Got an error!')
-//         console.log(err)
-//     })
+//   .then(function (results) {
+//     for (let i = 0; i < 3; i++) {
+//       console.log(`Person ${i + 1}'s name: ${results[i].name}`)
+//     }
+//   })
+//   .catch(function (err) {
+//     console.log('Got an error!')
+//     console.log(err)
+//   })

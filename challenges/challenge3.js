@@ -29,20 +29,20 @@
  */
 
 
- /**
-  * Asynchronously returns a greeting for a specified name.
-  * @param name The name of the person to greet.
-  */
- function greet(name) {
-    return new Promise(function(resolve, reject) {
-      setTimeout(function() {
-        if (typeof name === 'string') { 
-          resolve('Hello there, ' + name);
-        } else {
-          reject('Name must be a string!');
-        }
-      }, 500);
-    });
+/**
+ * Asynchronously returns a greeting for a specified name.
+ * @param name The name of the person to greet.
+ */
+function greet(name) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      if (typeof name === 'string') {
+        resolve('Hello there, ' + name);
+      } else {
+        reject('Name must be a string!');
+      }
+    }, 500);
+  });
 }
 
 /**
@@ -50,21 +50,21 @@
  * @param {*} str The string to uppercase.
  */
 function uppercaser(str) {
-    return new Promise(function(resolve, reject) {
-        setTimeout(function() {
-        if (typeof str === 'string') {
-            resolve(str.toUpperCase());
-        } else {
-            reject('Argument to uppercaser must be string');
-        }
-        }, 500);
-    });
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      if (typeof str === 'string') {
+        resolve(str.toUpperCase());
+      } else {
+        reject('Argument to uppercaser must be string');
+      }
+    }, 500);
+  });
 }
 
 async function greetAndUppercase(name) {
-    greeting = await greet(name)
-    uppercasedGreeting = await uppercaser(greeting)
-    return uppercasedGreeting
+  greeting = await greet(name)
+  uppercasedGreeting = await uppercaser(greeting)
+  return uppercasedGreeting
 }
 
 /* Uncomment me! #1 */
@@ -73,9 +73,9 @@ async function greetAndUppercase(name) {
 
 /* Uncomment me! #2 */
 // greetAndUppercase('Ducky')
-//     .then(function(result) {
-//         console.log(result)
-//     })
-//     .catch(function(err) {
-//         console.log(err)
-//     })
+//   .then(function (result) {
+//     console.log(result)
+//   })
+//   .catch(function (err) {
+//     console.log(err)
+//   })

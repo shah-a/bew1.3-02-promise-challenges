@@ -20,16 +20,15 @@
 
 /* This function takes a callback as a parameter. */
 function snooze(action) {
-    setTimeout(function() {
-      action();
-    }, 2000);
+  setTimeout(function () {
+    action();
+  }, 2000);
 }
 console.log('Step 1');
 
-snooze( function() {
-    console.log('Step 2');
-    console.log("Async Action completed via callback");
-} );
+snooze(function () {
+  console.log('Step 2');
+  console.log("Async Action completed via callback");
+});
 
 console.log('Step 3');
-
